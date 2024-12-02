@@ -1,4 +1,4 @@
-use advent2024_rs::{day1, get_input};
+use advent2024_rs::{day1, day2, get_input};
 use std::io::{stdin, stdout, BufRead, Write};
 
 fn main() -> anyhow::Result<()> {
@@ -12,6 +12,7 @@ fn main() -> anyhow::Result<()> {
 
     let (part1, part2) = match day {
         1 => (day1::part1(&lines), day1::part2(&lines)),
+        2 => (day2::part1(&lines), day2::part2(&lines)),
         _ => (String::new(), String::new()),
     };
 
