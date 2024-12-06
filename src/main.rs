@@ -3,6 +3,7 @@ use advent2024_rs::day2::Day2;
 use advent2024_rs::day3::Day3;
 use advent2024_rs::day4::Day4;
 use advent2024_rs::day5::Day5;
+use advent2024_rs::day6::Day6;
 use advent2024_rs::{get_input, Day};
 use std::io::{stdin, stdout, BufRead, Write};
 
@@ -21,6 +22,7 @@ fn main() -> anyhow::Result<()> {
         3 => Day3::run(&lines),
         4 => Day4::run(&lines),
         5 => Day5::run(&lines),
+        6 => Day6::run(&lines),
         _ => (String::new(), String::new()),
     };
 
