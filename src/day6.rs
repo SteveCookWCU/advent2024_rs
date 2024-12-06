@@ -38,6 +38,7 @@ impl Day for Day6 {
             })
             .collect::<HashSet<_>>();
 
+        // zug zug
         for (y2, x2) in original_path {
             let mut positions = HashSet::new();
             grid[y2][x2] = '#';
