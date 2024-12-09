@@ -6,10 +6,13 @@ use advent2024_rs::day5::Day5;
 use advent2024_rs::day6::Day6;
 use advent2024_rs::day7::Day7;
 use advent2024_rs::day8::Day8;
+use advent2024_rs::day9::Day9;
 use advent2024_rs::{get_input, Day};
 use std::io::{stdin, stdout, BufRead, Write};
+use std::time::Instant;
 
 fn main() -> anyhow::Result<()> {
+    let start = Instant::now();
     print!("Please input a day: ");
     stdout().flush()?;
     let mut input = String::new();
@@ -27,11 +30,13 @@ fn main() -> anyhow::Result<()> {
         6 => Day6::run(&lines),
         7 => Day7::run(&lines),
         8 => Day8::run(&lines),
+        9 => Day9::run(&lines),
         _ => (String::new(), String::new()),
     };
 
     println!("Part 1: {}", part1);
     println!("Part 2: {}", part2);
+    println!("Time: {}s", start.elapsed().as_secs_f32());
 
     Ok(())
 }
