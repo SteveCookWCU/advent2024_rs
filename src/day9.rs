@@ -8,6 +8,7 @@ pub enum Fragment {
     Free { len: usize },
 }
 
+#[allow(clippy::len_without_is_empty)]
 impl Fragment {
     pub fn is_file(&self) -> bool {
         match self {
@@ -17,9 +18,9 @@ impl Fragment {
     }
 
     pub fn len(&self) -> usize {
-        match self {
-            &Fragment::File { len, .. } => len,
-            &Fragment::Free { len, .. } => len,
+        match *self {
+            Fragment::File { len, .. } => len,
+            Fragment::Free { len, .. } => len,
         }
     }
 }
@@ -144,13 +145,10 @@ impl Day for Day9 {
         let mut sum = 0;
         let mut idx = 0;
         for frag in input {
-            match frag {
-                Fragment::File { id, len } => {
-                    for block_pos in idx..(idx + len) {
-                        sum += block_pos * id;
-                    }
+            if let Fragment::File { id, len } = frag {
+                for block_pos in idx..(idx + len) {
+                    sum += block_pos * id;
                 }
-                _ => {}
             }
             idx += frag.len()
         }

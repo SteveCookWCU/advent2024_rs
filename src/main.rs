@@ -1,4 +1,5 @@
 use advent2024_rs::day1::Day1;
+use advent2024_rs::day10::Day10;
 use advent2024_rs::day2::Day2;
 use advent2024_rs::day3::Day3;
 use advent2024_rs::day4::Day4;
@@ -31,6 +32,7 @@ fn main() -> anyhow::Result<()> {
         7 => Day7::run(&lines),
         8 => Day8::run(&lines),
         9 => Day9::run(&lines),
+        10 => Day10::run(&lines),
         _ => (String::new(), String::new()),
     };
 
