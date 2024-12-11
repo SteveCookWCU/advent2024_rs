@@ -11,6 +11,7 @@ use advent2024_rs::day9::Day9;
 use advent2024_rs::{get_input, Day};
 use std::io::{stdin, stdout, BufRead, Write};
 use std::time::Instant;
+use advent2024_rs::day11::Day11;
 
 fn main() -> anyhow::Result<()> {
     let start = Instant::now();
@@ -33,6 +34,7 @@ fn main() -> anyhow::Result<()> {
         8 => Day8::run(&lines),
         9 => Day9::run(&lines),
         10 => Day10::run(&lines),
+        11 => Day11::run(&lines),
         _ => (String::new(), String::new()),
     };
 
