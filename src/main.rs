@@ -1,5 +1,6 @@
 use advent2024_rs::day1::Day1;
 use advent2024_rs::day10::Day10;
+use advent2024_rs::day11::Day11;
 use advent2024_rs::day2::Day2;
 use advent2024_rs::day3::Day3;
 use advent2024_rs::day4::Day4;
@@ -11,7 +12,6 @@ use advent2024_rs::day9::Day9;
 use advent2024_rs::{get_input, Day};
 use std::io::{stdin, stdout, BufRead, Write};
 use std::time::Instant;
-use advent2024_rs::day11::Day11;
 
 fn main() -> anyhow::Result<()> {
     let start = Instant::now();

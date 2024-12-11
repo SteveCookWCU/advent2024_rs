@@ -1,5 +1,5 @@
-use std::collections::HashMap;
 use crate::Day;
+use std::collections::HashMap;
 
 pub struct Day11;
 
@@ -50,7 +50,10 @@ impl Day for Day11 {
 
     fn parse_input(input: &[impl AsRef<str>]) -> Self::Input {
         let mut map: HashMap<u64, usize> = HashMap::new();
-        input[0].as_ref().split(' ').for_each(|s| *map.entry(s.parse().unwrap()).or_insert(0) += 1);
+        input[0]
+            .as_ref()
+            .split(' ')
+            .for_each(|s| *map.entry(s.parse().unwrap()).or_insert(0) += 1);
         map
     }
 }
