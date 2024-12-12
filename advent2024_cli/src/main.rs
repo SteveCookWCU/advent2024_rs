@@ -15,7 +15,6 @@ use std::io::{stdin, stdout, BufRead, Write};
 use std::time::Instant;
 
 fn main() -> anyhow::Result<()> {
-    let start = Instant::now();
     print!("Please input a day: ");
     stdout().flush()?;
     let mut input = String::new();
@@ -23,7 +22,7 @@ fn main() -> anyhow::Result<()> {
 
     let day = input.trim().parse::<u32>()?;
     let lines = get_input(format!("../inputs/day{}.txt", day))?;
-
+    let start = Instant::now();
     let (part1, part2) = match day {
         1 => Day1::run(&lines),
         2 => Day2::run(&lines),
@@ -39,10 +38,11 @@ fn main() -> anyhow::Result<()> {
         12 => Day12::run(&lines),
         _ => (String::new(), String::new()),
     };
+    let t = start.elapsed().as_secs_f32();
 
     println!("Part 1: {}", part1);
     println!("Part 2: {}", part2);
-    println!("Time: {}s", start.elapsed().as_secs_f32());
+    println!("Time: {}s", t);
 
     Ok(())
 }

@@ -47,7 +47,6 @@ impl Day for Day6 {
             }
             grid[y2][x2] = '.';
         }
-        println!("{}", start.elapsed().as_secs_f32());
         count.to_string()
     }
 

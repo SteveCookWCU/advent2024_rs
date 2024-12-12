@@ -4,7 +4,7 @@ use std::collections::HashMap;
 pub struct Day11;
 
 impl Day for Day11 {
-    type Input = HashMap<u64, usize>;
+    type Input = HashMap<u64, u64>;
 
     fn part1(mut input: Self::Input) -> String {
         for _ in 0..25 {
@@ -24,7 +24,7 @@ impl Day for Day11 {
             }
             input = new_map;
         }
-        input.into_values().sum::<usize>().to_string()
+        input.into_values().sum::<u64>().to_string()
     }
 
     fn part2(mut input: Self::Input) -> String {
@@ -45,11 +45,11 @@ impl Day for Day11 {
             }
             input = new_map;
         }
-        input.into_values().sum::<usize>().to_string()
+        input.into_values().sum::<u64>().to_string()
     }
 
     fn parse_input(input: &[impl AsRef<str>]) -> Self::Input {
-        let mut map: HashMap<u64, usize> = HashMap::new();
+        let mut map: HashMap<u64, u64> = HashMap::new();
         input[0]
             .as_ref()
             .split(' ')
