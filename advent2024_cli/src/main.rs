@@ -1,15 +1,16 @@
-use advent2024_rs::day1::Day1;
-use advent2024_rs::day10::Day10;
-use advent2024_rs::day11::Day11;
-use advent2024_rs::day2::Day2;
-use advent2024_rs::day3::Day3;
-use advent2024_rs::day4::Day4;
-use advent2024_rs::day5::Day5;
-use advent2024_rs::day6::Day6;
-use advent2024_rs::day7::Day7;
-use advent2024_rs::day8::Day8;
-use advent2024_rs::day9::Day9;
-use advent2024_rs::{get_input, Day};
+use advent2024_core::day1::Day1;
+use advent2024_core::day10::Day10;
+use advent2024_core::day11::Day11;
+use advent2024_core::day12::Day12;
+use advent2024_core::day2::Day2;
+use advent2024_core::day3::Day3;
+use advent2024_core::day4::Day4;
+use advent2024_core::day5::Day5;
+use advent2024_core::day6::Day6;
+use advent2024_core::day7::Day7;
+use advent2024_core::day8::Day8;
+use advent2024_core::day9::Day9;
+use advent2024_core::{get_input, Day};
 use std::io::{stdin, stdout, BufRead, Write};
 use std::time::Instant;
 
@@ -21,7 +22,7 @@ fn main() -> anyhow::Result<()> {
     stdin().lock().read_line(&mut input)?;
 
     let day = input.trim().parse::<u32>()?;
-    let lines = get_input(format!("./inputs/day{}.txt", day))?;
+    let lines = get_input(format!("../inputs/day{}.txt", day))?;
 
     let (part1, part2) = match day {
         1 => Day1::run(&lines),
@@ -35,6 +36,7 @@ fn main() -> anyhow::Result<()> {
         9 => Day9::run(&lines),
         10 => Day10::run(&lines),
         11 => Day11::run(&lines),
+        12 => Day12::run(&lines),
         _ => (String::new(), String::new()),
     };
 

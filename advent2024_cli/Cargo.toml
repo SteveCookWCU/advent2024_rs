@@ -1,0 +1,8 @@
+[package]
+name = "advent2024_cli"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.94"
+advent2024_core = {path = "../advent2024_core"}

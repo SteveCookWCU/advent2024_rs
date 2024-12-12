@@ -1,0 +1,10 @@
+[package]
+name = "advent2024_3ds"
+version = "0.1.0"
+edition = "2021"
+
+[target.armv6k-nintendo-3ds.dependencies]
+ctru-rs = { git = "https://github.com/rust3ds/ctru-rs.git" }
+
+[dependencies]
+advent2024_core = { path = "../advent2024_core" }
