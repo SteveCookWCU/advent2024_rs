@@ -2,6 +2,7 @@ use advent2024_core::day1::Day1;
 use advent2024_core::day10::Day10;
 use advent2024_core::day11::Day11;
 use advent2024_core::day12::Day12;
+use advent2024_core::day13::Day13;
 use advent2024_core::day2::Day2;
 use advent2024_core::day3::Day3;
 use advent2024_core::day4::Day4;
@@ -36,6 +37,7 @@ fn main() -> anyhow::Result<()> {
         10 => Day10::run(&lines),
         11 => Day11::run(&lines),
         12 => Day12::run(&lines),
+        13 => Day13::run(&lines),
         _ => (String::new(), String::new()),
     };
     let t = start.elapsed().as_secs_f32();

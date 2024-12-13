@@ -1,6 +1,5 @@
 use crate::Day;
 use std::collections::HashSet;
-use std::time::Instant;
 
 pub struct Day6;
 
@@ -21,7 +20,6 @@ impl Day for Day6 {
     }
 
     fn part2(input: Self::Input) -> String {
-        let start = Instant::now();
         let mut count = 0;
         let ((y, x), mut grid) = input;
 
